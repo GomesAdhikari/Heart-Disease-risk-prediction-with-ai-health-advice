@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;700&display=swap');
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('static/img1.jpg'); /* Update the path to your image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+            color: #ffffff; /* Updated text color */
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7); /* Dark translucent background */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
+            animation: slideUp 1s ease-out;
+        }
+
+        h1 {
+            color: #00e5ff; /* Bright cyan text to match the digital theme */
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+            animation: textGlow 2s infinite alternate;
+        }
+
+        p {
+            color: #ffffff; /* White text for better contrast */
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            animation: fadeInText 1.5s ease-in-out;
+        }
+
+        button {
+            background-color: #00e5ff; /* Match button with header text color */
+            color: #000000; /* Dark text on light button */
+            border: none;
+            padding: 12px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1em;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #009cb0; /* Slightly darker cyan on hover */
+            transform: scale(1.05);
+        }
+
+        .link-buttons {
+            display: flex;
+            justify-content: center; /* Centered alignment */
+            margin-top: 20px;
+        }
+
+        .link-buttons a {
+            text-decoration: none;
+            color: #000000;
+            background-color: #00e5ff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .link-buttons a:hover {
+            background-color: #009cb0;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes textGlow {
+            from { text-shadow: 0 0 10px rgba(0, 229, 255, 0.5); }
+            to { text-shadow: 0 0 20px rgba(0, 229, 255, 0.7); }
+        }
+
+        @keyframes fadeInText {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Heart Disease Prediction System</h1>
+        <p>This system uses a Random Forest Classifier with 91% accuracy, trained on a dataset of 800 people.</p>
+        <p>Developed by Gomes Singh Adhikari, Data Scientist at Vijai Robotics.</p>
+        <div class="link-buttons">
+            <a href="{{ url_for('index') }}">Get Started</a>
+        </div>
+    </div>
+</body>
+</html>

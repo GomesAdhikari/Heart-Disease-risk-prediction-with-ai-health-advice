@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result & Health Advice</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- CSS Styles -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            background-image: url('static/img1.jpg'); /* Use your image as background */
+            background-size: cover; /* Cover the entire page */
+            background-position: center center; /* Center the background */
+            background-attachment: fixed; /* Keep the background fixed while scrolling */
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Dark translucent background */
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+        h1, h2 {
+            color: #00e5ff; /* Bright cyan text to match the welcome page theme */
+            font-family: 'Montserrat', sans-serif;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .info, .advice {
+            margin-top: 20px;
+        }
+        .info p, .advice p {
+            line-height: 1.6;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .info {
+            border-bottom: 2px solid #00e5ff; /* Match header text color */
+            padding-bottom: 10px;
+        }
+        .advice h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid #00e5ff; /* Match header text color */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .advice ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        .advice ul li {
+            margin-bottom: 10px;
+        }
+        .advice .highlight {
+            background-color: rgba(0, 229, 255, 0.2); /* Light cyan background */
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #00e5ff; /* Match header text color */
+        }
+        a {
+            color: #00e5ff; /* Match header text color */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #00e5ff; /* Match header text color */
+            color: #000000;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .button:hover {
+            background-color: #009cb0; /* Slightly darker cyan on hover */
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result & Personalized Health Advice</h1>
+
+        <div class="info">
+            <p><strong>Prediction:</strong> {{ prediction }}</p>
+            <p><strong>Probability of Heart Disease in %:</strong> {{ proba_heart_disease|round(2) }}</p>
+        </div>
+
+        <div class="advice">
+            <h2>AI Personalized Health Advice</h2>
+            <p>{{ response }}</p> <!-- Display AI-generated advice here -->
+
+            <h2>General Recommendations</h2>
+            <p>Based on your health data, here are some personalized recommendations:</p>
+            <ul>
+                <li>Increase physical activity to improve cardiovascular health.</li>
+                <li>Monitor your cholesterol levels regularly and consult with a nutritionist.</li>
+                <li>Maintain a balanced diet with low saturated fats.</li>
+                <li>Consider stress management techniques like meditation or yoga.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
