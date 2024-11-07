@@ -5,7 +5,7 @@ from flask import Flask, request, render_template, redirect, flash
 import google.generativeai as genai
 
 # Set up Google Gemini API key
-os.environ["GOOGLE_API_KEY"] = 'AIzaSyC8pqRt6Xxgv5pxjij6C1uWlSnfqqaqaYY'
+os.environ["GOOGLE_API_KEY"] = 'XXXXXXXXXXXXXXXXXXXX'
 genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 model = joblib.load('best_rf_model.pkl')
 
