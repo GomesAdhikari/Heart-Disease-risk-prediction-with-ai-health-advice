@@ -3,7 +3,8 @@ import numpy as np
 import joblib
 from flask import Flask, request, render_template, redirect, flash
 import google.generativeai as genai
-
+from dotenv import load_dotenv
+load_dotenv()
 # Set up Google Gemini API key
 os.environ["GOOGLE_API_KEY"] = 'XXXXXXXXXXXXXXXXXXXX'
 genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
