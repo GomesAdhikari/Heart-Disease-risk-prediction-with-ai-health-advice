@@ -127,12 +127,14 @@ def predict():
     )
 
     response = model_llm.generate_content([prompt])
+    rep = response.text.replace('*',"-")
 
     return render_template('result.html',
                            prediction=prediction,
                            proba_heart_disease=proba_heart_disease,
                            proba_no_heart_disease=proba_no_heart_disease,
-                           response=response.text)
+                           response=rep)
+    
 
 if __name__ == '__main__':
     app.run(debug=True)
