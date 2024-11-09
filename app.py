@@ -6,8 +6,7 @@ import google.generativeai as genai
 from dotenv import load_dotenv
 load_dotenv()
 # Set up Google Gemini API key
-os.environ["GOOGLE_API_KEY"] = 'XXXXXXXXXXXXXXXXXXXX'
-genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 model = joblib.load('best_rf_model.pkl')
 
 # Initialize the Google Gemini model
