@@ -3,3 +3,5 @@ Flask
 packaging
 gunicorn
 google-generativeai
+numpy
+joblib
